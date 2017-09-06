@@ -7,9 +7,9 @@ import configureStore from './store/store';
 import App from './components/app';
 
 const Root = ({store}) => (
-  <Provider store={store}>
+  <Provider store = {store}>
     <HashRouter>
-      <App />
+      <App/>
     </HashRouter>
   </Provider>
 );
@@ -17,7 +17,7 @@ const Root = ({store}) => (
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
   const root = document.getElementById('root');
-  window.getState=store.getState;
-  ReactDOM.render(<Root store={store}/>, root);
+  window.getState = store.getState;
+  ReactDOM.render(<Root store = {store}/>, root);
 
 });

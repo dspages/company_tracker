@@ -18,8 +18,8 @@ export const requestSingleFirm = (id) => (dispatch) => {
   });
 };
 
-export const createFirm = cfirm => dispatch => (
-  APIUtil.createFirm(cfirm).then(firm => {
+export const createFirm = (cfirm, contacts) => dispatch => (
+  APIUtil.createFirm(cfirm, contacts).then(firm => {
     dispatch(receiveSingleFirm(firm));
     return firm;
   }).fail(err => dispatch(receiveFirmErrors(err.responseJSON)))
@@ -33,8 +33,8 @@ export const editFirm = efirm => dispatch => (
 );
 
 export const destroyFirm = dfirm => dispatch => (
-  APIUtil.deleteFirm(dfirm).then(firm => {
-    dispatch(removeSingleFirm(firm));
+  APIUtil.deleteFirm(dfirm).then(() => {
+    dispatch(removeSingleFirm(dfirm));
     return [];
   }).fail(err => dispatch(receiveFirmErrors(err.responseJSON)))
 );

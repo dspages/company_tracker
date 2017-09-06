@@ -1,6 +1,6 @@
 class Api::FirmsController < ApplicationController
   def index
-    @firm = Firm.all
+    @firms = Firm.all
   end
 
   def show
@@ -34,12 +34,8 @@ class Api::FirmsController < ApplicationController
 
   def destroy
     @firm = Firm.find(params[:id])
-
-    if @firm.destroy
-      render :show
-    else
-      render json: @firm.errors.full_messages, status: 422
-    end
+    @firm.delete
+    render :show
   end
 
   private

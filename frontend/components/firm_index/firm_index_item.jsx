@@ -12,7 +12,7 @@ class FirmIndexItem extends React.Component{
      return(
        <li className="post-index-item">
           <Link className="item-part" to={`/firms/${this.props.id}`}>
-           {this.props.title}
+           {this.props.name}
          </Link>
 
          <Link className="item-part" to={`/firms/${this.props.id}/edit`}>

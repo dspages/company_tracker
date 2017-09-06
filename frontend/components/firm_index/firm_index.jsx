@@ -13,8 +13,8 @@ class FirmList extends React.Component {
   }
 
   make_array(obj){
-    let out=[];
-    let keys=Object.keys(obj);
+    let out = [];
+    let keys = Object.keys(obj);
     for (var i = 0; i < keys.length; i++) {
       out.push(obj[keys[i]]);
     }
@@ -23,35 +23,35 @@ class FirmList extends React.Component {
 
   render() {
     // console.log(this.props);
-    const { firms, editFirm, createFirm, errors } = this.props;
-    const destroyFirm=(dfirm)=>{
-      return ()=>{this.props.destroyFirm(dfirm);};
+    const {firms, editFirm, createFirm, errors} = this.props;
+    const destroyFunctionGenerator = (dfirm) => {
+      return () => {this.props.destroyFirm(dfirm);};
     };
-    let firmItems;
+    let firmListItems;
     if(Object.keys(firms.firmList).length>0)
     {
-      firmItems = this.make_array(firms.firmList).map(firm => (
+      firmListItems = this.make_array(firms.firmList).map(firm => (
           <FirmIndexItem
-          title={firm.title}
-          key={firm.id}
-          id={firm.id}
-          destroyFirm={destroyFirm(firm)}
+          name = {firm.name}
+          key = {firm.id}
+          id = {firm.id}
+          destroyFirm = {destroyFunctionGenerator(firm)}
           />
         )
       );
     }else{
-      firmItems="";
+      firmListItems="";
     }
 
     return(
       <div>
-        <h1 className="header">All Firms</h1>
+        <h1 className = "header">All Firms</h1>
         <div className = "main-box">
-          <ul className="firm-list">
-            { firmItems }
+          <ul className = "firm-list">
+            {firmListItems}
           </ul>
           <FirmForm
-            createFirm={createFirm}
+            createFirm = {createFirm}
             />
         </div>
       </div>

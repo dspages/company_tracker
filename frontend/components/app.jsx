@@ -5,11 +5,11 @@ import FirmShowContainer from './firm_show/firm_show_container';
 import {Route, Switch, Link, HashRouter} from 'react-router-dom';
 
 const App = () => (
-  <div className="main">
+  <div className = "main">
     <Switch>
-      <Route path="/firms/:firmID/edit" component={FirmEditContainer} />
-      <Route path="/firms/:firmID" component={FirmShowContainer} />
-      <Route path="/" component={FirmsIndexContainer} />
+      <Route path = "/firms/:firmID/edit" component = {FirmEditContainer} />
+      <Route path = "/firms/:firmID" component = {FirmShowContainer} />
+      <Route path = "/" component = {FirmsIndexContainer} />
     </Switch>
   </div>
 );
