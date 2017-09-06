@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906011915) do
+ActiveRecord::Schema.define(version: 20170906231027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20170906011915) do
     t.string   "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "finances", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "year"
+    t.integer  "liabilities"
+    t.integer  "valuation"
+    t.integer  "assets"
+    t.integer  "gross_income"
+    t.integer  "expenses"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["company_id"], name: "index_finances_on_company_id", using: :btree
   end
 
   create_table "firms", force: :cascade do |t|

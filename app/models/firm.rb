@@ -4,4 +4,8 @@ class Firm < ApplicationRecord
     primary_key: :id,
     foreign_key: :company_id,
     class_name: :Contact
+  has_many :finances,
+    primary_key: :id,
+    foreign_key: :company_id,
+    class_name: :Finance
 end

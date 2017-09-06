@@ -7,5 +7,6 @@ class CreateContacts < ActiveRecord::Migration[5.0]
       t.string :notes
       t.timestamps
     end
+    add_index :contacts, :company_id
   end
 end
