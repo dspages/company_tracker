@@ -12,15 +12,6 @@ class FirmList extends React.Component {
     this.props.requestFirms();
   }
 
-  make_array(obj){
-    let out = [];
-    let keys = Object.keys(obj);
-    for (var i = 0; i < keys.length; i++) {
-      out.push(obj[keys[i]]);
-    }
-    return out;
-  }
-
   render() {
     // console.log(this.props);
     const {firms, editFirm, createFirm, errors} = this.props;
@@ -28,9 +19,9 @@ class FirmList extends React.Component {
       return () => {this.props.destroyFirm(dfirm);};
     };
     let firmListItems;
-    if(Object.keys(firms.firmList).length>0)
+    if(Object.values(firms.firmList).length > 0)
     {
-      firmListItems = this.make_array(firms.firmList).map(firm => (
+      firmListItems = Object.values(firms.firmList).map(firm => (
           <FirmIndexItem
           name = {firm.name}
           status = {firm.status}
@@ -41,7 +32,7 @@ class FirmList extends React.Component {
         )
       );
     }else{
-      firmListItems="";
+      firmListItems = "";
     }
 
     return(
