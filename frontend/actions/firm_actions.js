@@ -2,6 +2,7 @@ export const RECEIVE_ALL_FIRMS = "RECEIVE_ALL_FIRMS";
 export const RECEIVE_SINGLE_FIRM = "RECEIVE_SINGLE_FIRM";
 export const REMOVE_SINGLE_FIRM = "REMOVE_SINGLE_FIRM";
 export const RECEIVE_FIRM_ERRORS = "RECEIVE_FIRM_ERRORS";
+export const CREATE_SINGLE_FIRM = "CREATE_SINGLE_FIRM";
 
 import * as APIUtil from '../util/api_util';
 
@@ -20,7 +21,7 @@ export const requestSingleFirm = (id) => (dispatch) => {
 
 export const createFirm = (cfirm, contacts, finances) => dispatch => (
   APIUtil.createFirm(cfirm, contacts, finances).then(firm => {
-    dispatch(receiveSingleFirm(firm));
+    dispatch(createSingleFirm(firm));
     return firm;
   }).fail(err => dispatch(receiveFirmErrors(err.responseJSON)))
 );
@@ -38,6 +39,11 @@ export const destroyFirm = dfirm => dispatch => (
     return [];
   }).fail(err => dispatch(receiveFirmErrors(err.responseJSON)))
 );
+
+export const createSingleFirm = firm => ({
+  type: CREATE_SINGLE_FIRM,
+  firm
+});
 
 
 export const receiveAllFirms = firms => ({

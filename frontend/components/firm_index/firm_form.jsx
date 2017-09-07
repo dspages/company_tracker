@@ -9,6 +9,13 @@ class FirmForm extends React.Component {
   constructor(props){
     super(props);
     this.state = props;
+    console.log(props);
+  }
+
+  componentDidMount(){
+    // console.log("mounting");
+    // this.forceUpdate();
+    this.render();
   }
 
   submitForm (event) {
@@ -19,9 +26,7 @@ class FirmForm extends React.Component {
       status: this.state.status,
       id: this.state.id},
       this.state.contacts,
-      this.state.finances).then(
-        () => {return;}
-      );
+      this.state.finances);
   }
 
   changeName (event) {

@@ -10,11 +10,11 @@ class FirmShow extends React.Component{
 
   componentDidMount(){
     this.props.requestFirm(this.props.match.params.firmID);
-    console.log(this.props.match.params.firmID);
+    // console.log(this.props.match.params.firmID);
   }
 
   render(){
-    console.log(this.props);
+    console.log(this.state);
     if(this.props.firm){
       return (
         <div className="show">
