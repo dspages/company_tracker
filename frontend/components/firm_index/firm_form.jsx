@@ -1,8 +1,9 @@
 import React from 'react';
+import Finance from '../finance/finance';
+import Contact from '../contact/contact';
 
-const DEFAULT_STATE = {id: "", status: "pending", info: "", liabilities: "",
-valuation: "", outstanding_shares: "", assets: "", gross_income: "",
-expenses: "", name: ""};
+const DEFAULT_STATE = {id: "", status: "researching", info: "", name: "",
+  contacts: [], finances: []};
 
 class FirmForm extends React.Component {
   constructor(props){
@@ -15,7 +16,9 @@ class FirmForm extends React.Component {
     this.props.createFirm({
       name: this.state.name,
       info: this.state.info,
-      status: this.state.status}).then(
+      status: this.state.status},
+      this.state.contacts,
+      this.state.finances).then(
         () => this.setState(DEFAULT_STATE)
       );
   }
@@ -33,8 +36,10 @@ class FirmForm extends React.Component {
   }
 
   render(){
+
     return (
       <form className = "new-form">Create New Firm
+        <div className = "new-firm-column">
          <br></br>
          <label>Name:
          <input onChange = {this.changeName.bind(this)} id = "title" type = "text"></input>
@@ -43,9 +48,21 @@ class FirmForm extends React.Component {
          <input onChange = {this.changeInfo.bind(this)} id = "body" type = "text"></input>
          </label>
          <label>Status:
-         <input onChange = {this.changeStatus.bind(this)} id = "status" type = "text"></input>
-         </label>
+           <select value = {this.state.status} onChange = {this.changeStatus.bind(this)}>
+            <option value = "researching">Researching</option>
+            <option value = "pending">Pending</option>
+            <option value = "approved">Approved</option>
+            <option value = "denied">Denied</option>
+          </select>
+        </label>
          <input type = "submit" onClick = {this.submitForm.bind(this)}></input>
+        </div>
+        <div className = "new-firm-column">
+
+        </div>
+        <div className = "new-firm-column">
+
+        </div>
        </form>
     );
   }

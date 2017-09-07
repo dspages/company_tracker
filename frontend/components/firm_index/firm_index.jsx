@@ -33,6 +33,7 @@ class FirmList extends React.Component {
       firmListItems = this.make_array(firms.firmList).map(firm => (
           <FirmIndexItem
           name = {firm.name}
+          status = {firm.status}
           key = {firm.id}
           id = {firm.id}
           destroyFirm = {destroyFunctionGenerator(firm)}

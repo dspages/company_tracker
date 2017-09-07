@@ -9,7 +9,7 @@ import { allFirms, oneFirm } from '../../reducers/selectors';
 const mapStateToProps = state => {
   // console.log(state);
     return {
-    firm: oneFirm(state,state.firms.currentFirm),
+    firm: oneFirm(state, state.firms.currentFirm.id),
     errors: state.errors
   };
 };

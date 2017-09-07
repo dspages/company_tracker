@@ -12,17 +12,17 @@ export const fetchFirm = id => (
   })
 );
 
-export const createFirm = (firm, contacts) => {
+export const createFirm = (firm, contacts, finances) => {
   console.log(firm);
     return ($.ajax({
       method: 'POST',
       url: '/api/firms',
-      data: {firm: firm, contacts: contacts}
+      data: {firm: firm, contacts: contacts, finances: finances}
     })
   );
 };
 
-export const editFirm = (firm) => (
+export const editFirm = (firm, contacts, financials) => (
   $.ajax({
     method: 'PATCH',
     url: `/api/firms/${firm.id}`,
@@ -38,20 +38,39 @@ export const deleteFirm = firm => {
   );
 };
 
+
+export const createFinance = (finance) => {
+    return ($.ajax({
+      method: 'POST',
+      url: '/api/finances',
+      data: {finance: finance}
+    })
+  );
+};
+
+export const editFinance = (finance) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/finances/${finance.id}`,
+    data: {finance: finance}
+  })
+);
+
+export const deleteFinance = finance => {
+  return ($.ajax({
+    method: 'DELETE',
+    url: `api/finances/${finance.id}`
+  })
+  );
+};
+
+
 export const createContact = (contact) => {
     return ($.ajax({
       method: 'POST',
       url: '/api/contacts',
       data: {contact: contact}
     })
-  );
-};
-
-export const deleteContact = contact => {
-  return ($.ajax({
-    method: 'DELETE',
-    url: `api/contacts/${contact.id}`
-  })
   );
 };
 
@@ -62,3 +81,11 @@ export const editContact = (contact) => (
     data: {contact: contact}
   })
 );
+
+export const deleteContact = contact => {
+  return ($.ajax({
+    method: 'DELETE',
+    url: `api/contacts/${contact.id}`
+  })
+  );
+};

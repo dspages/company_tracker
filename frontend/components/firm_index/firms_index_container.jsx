@@ -14,7 +14,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   destroyFirm: Firm => dispatch(destroyFirm(Firm)),
   requestFirms: () => dispatch(requestAllFirms()),
-  createFirm: Firm => dispatch(createFirm(Firm)),
+  createFirm: (Firm, Contacts, Finances) =>
+  dispatch(createFirm(Firm, Contacts, Finances)),
   editFirm: Firm => dispatch(editFirm(Firm))
 });
 

@@ -35,4 +35,6 @@ class Api::ContactsController < ApplicationController
     params.require(:contact).permit(:name, :email, :company_id,
     :notes)
   end
+
+
 end

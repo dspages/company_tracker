@@ -1,2 +1,3 @@
-json.extract! contact, :name, :email, :company_id,
-:notes
+json.extract! finance, :liabilities,
+:valuation, :assets, :gross_income,
+:expenses, :year

@@ -18,8 +18,8 @@ export const requestSingleFirm = (id) => (dispatch) => {
   });
 };
 
-export const createFirm = (cfirm, contacts) => dispatch => (
-  APIUtil.createFirm(cfirm, contacts).then(firm => {
+export const createFirm = (cfirm, contacts, finances) => dispatch => (
+  APIUtil.createFirm(cfirm, contacts, finances).then(firm => {
     dispatch(receiveSingleFirm(firm));
     return firm;
   }).fail(err => dispatch(receiveFirmErrors(err.responseJSON)))

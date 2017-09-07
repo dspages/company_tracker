@@ -14,10 +14,7 @@ class FirmIndexItem extends React.Component{
           <Link className="item-part" to={`/firms/${this.props.id}`}>
            {this.props.name}
          </Link>
-
-         <Link className="item-part" to={`/firms/${this.props.id}/edit`}>
-          Edit Firm
-        </Link>
+         {this.props.status}
           <button className="item-part" onClick={this.props.destroyFirm}> Delete
         </button>
        </li>
