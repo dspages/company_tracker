@@ -1,2 +1,2 @@
-json.extract! contact, :name, :email, 
-:notes
+json.extract! contact, :name, :email,
+:notes, :id

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import FirmShow from './firm_show';
 
-import { requestSingleFirm }
+import { requestSingleFirm, editFirm }
   from '../../actions/firm_actions';
 
 import { allFirms, oneFirm } from '../../reducers/selectors';
@@ -9,13 +9,14 @@ import { allFirms, oneFirm } from '../../reducers/selectors';
 const mapStateToProps = state => {
   // console.log(state);
     return {
-    firm: oneFirm(state, state.firms.currentFirm.id),
+    firm: oneFirm(state, state.firms.currentFirm),
     errors: state.errors
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   requestFirm: (id) => dispatch(requestSingleFirm(id)),
+  editFirm: Firm => dispatch(editFirm(Firm))
 });
 
 export default connect(

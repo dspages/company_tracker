@@ -8,18 +8,19 @@ const DEFAULT_STATE = {id: "", status: "researching", info: "", name: "",
 class FirmForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = DEFAULT_STATE;
+    this.state = props;
   }
 
   submitForm (event) {
     event.preventDefault();
-    this.props.createFirm({
+    this.props.submitFunc({
       name: this.state.name,
       info: this.state.info,
-      status: this.state.status},
+      status: this.state.status,
+      id: this.state.id},
       this.state.contacts,
       this.state.finances).then(
-        () => this.setState(DEFAULT_STATE)
+        () => {return;}
       );
   }
 
@@ -38,14 +39,14 @@ class FirmForm extends React.Component {
   render(){
 
     return (
-      <form className = "new-form">Create New Firm
+      <form className = "new-form">
         <div className = "new-firm-column">
          <br></br>
          <label>Name:
-         <input onChange = {this.changeName.bind(this)} id = "title" type = "text"></input>
+         <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "title" type = "text"></input>
          </label>
          <label>Info:
-         <input onChange = {this.changeInfo.bind(this)} id = "body" type = "text"></input>
+         <input value = {this.state.info} onChange = {this.changeInfo.bind(this)} id = "body" type = "text"></input>
          </label>
          <label>Status:
            <select value = {this.state.status} onChange = {this.changeStatus.bind(this)}>

@@ -1,4 +1,6 @@
 import React from 'react';
+import FirmForm from '../firm_index/firm_form';
+import { Link } from 'react-router-dom';
 
 class FirmShow extends React.Component{
   constructor(props){
@@ -12,14 +14,25 @@ class FirmShow extends React.Component{
   }
 
   render(){
-    // console.log(this.props.post);
+    console.log(this.props);
     if(this.props.firm){
       return (
         <div className="show">
+          <Link className="item-part" to={`/`}>
+           Return to Home Page
+          </Link>
           <h1>Show Page</h1>
           <h1>Name: {this.props.firm.name}</h1>
           <text>Info: {this.props.firm.info}</text>
           <p>Status: {this.props.firm.status}</p>
+          Edit Firm
+            <FirmForm
+            name = {this.props.firm.name}
+            status = {this.props.firm.status}
+            info = {this.props.firm.info}
+            id = {this.props.firm.id}
+            submitFunc = {this.props.editFirm}
+            />
         </div>
       );
     }else{

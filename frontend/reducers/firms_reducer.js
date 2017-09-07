@@ -15,7 +15,7 @@ const FirmsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_SINGLE_FIRM:
-      return merge({}, state, {currentFirm: [action.firm.id], firmList: { [action.firm.id]: action.firm }});
+      return merge({}, state, {currentFirm: action.firm.id, firmList: { [action.firm.id]: action.firm }});
     case RECEIVE_ALL_FIRMS:
       const firm = action.firms;
       let obj={

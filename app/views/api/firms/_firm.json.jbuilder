@@ -1,1 +1,1 @@
-json.extract! firm, :status, :info, :name
+json.extract! firm, :status, :info, :name, :id

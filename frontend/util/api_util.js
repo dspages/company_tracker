@@ -22,7 +22,7 @@ export const createFirm = (firm, contacts, finances) => {
   );
 };
 
-export const editFirm = (firm, contacts, financials) => (
+export const editFirm = (firm) => (
   $.ajax({
     method: 'PATCH',
     url: `/api/firms/${firm.id}`,

@@ -18,6 +18,7 @@ class FirmList extends React.Component {
     const destroyFunctionGenerator = (dfirm) => {
       return () => {this.props.destroyFirm(dfirm);};
     };
+    let key=1;
     let firmListItems;
     if(Object.values(firms.firmList).length > 0)
     {
@@ -25,7 +26,7 @@ class FirmList extends React.Component {
           <FirmIndexItem
           name = {firm.name}
           status = {firm.status}
-          key = {firm.id}
+          key = {key++}
           id = {firm.id}
           destroyFirm = {destroyFunctionGenerator(firm)}
           />
@@ -42,8 +43,10 @@ class FirmList extends React.Component {
           <ul className = "firm-list">
             {firmListItems}
           </ul>
+          Create New Firm
           <FirmForm
-            createFirm = {createFirm}
+            submitFunc = {createFirm}
+            status = "researching"
             />
         </div>
       </div>
