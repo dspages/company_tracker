@@ -16,7 +16,7 @@ const ContactsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch(action.type){
     case CREATE_SINGLE_CONTACT:
-    return merge({}, state, {contactList: { [action.contact.id]: action.contact }});
+    return merge({}, state, {firmList: { [action.firm.id]: action.contact }});
     case RECEIVE_SINGLE_CONTACT:
       return merge({}, state, {currentContact: action.contact.id, contactList: { [action.contact.id]: action.contact }});
     case RECEIVE_ALL_CONTACTS:

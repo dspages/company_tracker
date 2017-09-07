@@ -16,3 +16,9 @@ export const oneFirm = ({firms}, id) => {
   // console.log(firms.firmList);
   return firms.firmList[id];
 };
+
+export const selectedContacts = ({firms}, id) => {
+  // console.log(id);
+  // console.log(firms.firmList);
+  return firms.firmList[id].contacts;
+};

@@ -9,7 +9,7 @@ class FirmForm extends React.Component {
   constructor(props){
     super(props);
     this.state = props;
-    console.log(props);
+    //console.log(props);
   }
 
   componentDidMount(){
@@ -42,7 +42,6 @@ class FirmForm extends React.Component {
   }
 
   render(){
-
     return (
       <form className = "new-form">
         <div className = "new-firm-column">
@@ -62,12 +61,6 @@ class FirmForm extends React.Component {
           </select>
         </label>
          <input type = "submit" onClick = {this.submitForm.bind(this)}></input>
-        </div>
-        <div className = "new-firm-column">
-
-        </div>
-        <div className = "new-firm-column">
-
         </div>
        </form>
     );
