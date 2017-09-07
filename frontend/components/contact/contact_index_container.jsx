@@ -7,7 +7,7 @@ import { createContact, editContact, destroyContact }
 import { selectedContacts } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  contacts: selectedContacts(state),
+  selectedContacts: selectedContacts(state),
   errors: state.errors
 });
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import FirmForm from '../firm_index/firm_form';
 import { Link } from 'react-router-dom';
+import ContactIndexContainer from '../contact/contact_index_container.jsx';
 
 class FirmShow extends React.Component{
   constructor(props){
@@ -14,7 +15,7 @@ class FirmShow extends React.Component{
   }
 
   render(){
-    console.log(this.state);
+    // console.log(this.state);
     if(this.props.firm){
       return (
         <div className="show">
@@ -33,6 +34,9 @@ class FirmShow extends React.Component{
             id = {this.props.firm.id}
             submitFunc = {this.props.editFirm}
             />
+            <ContactIndexContainer
+              id = {this.props.firm.id}
+              />
         </div>
       );
     }else{

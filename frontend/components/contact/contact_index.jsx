@@ -9,23 +9,23 @@ class ContactList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.selectedContacts();
   }
 
   render() {
     // console.log(this.props);
-    const {contacts, editContact, createContact, errors} = this.props;
+    const {selectedContacts, editContact, createContact, errors} = this.props;
     const destroyFunctionGenerator = (dcontact) => {
       return () => {this.props.destroyContact(dcontact);};
     };
     let key=1;
     let contactListItems;
-    if(Object.values(contacts.contactList).length > 0)
+    if(selectedContacts && Object.values(selectedContacts).length > 0)
     {
-      contactListItems = Object.values(contacts.contactList).map(contact => (
+      contactListItems = Object.values(selectedContacts).map(contact => (
           <ContactIndexItem
           name = {contact.name}
-          status = {contact.status}
+          email = {contact.email}
+          notes = {contact.notes}
           key = {key++}
           id = {contact.id}
           destroyContact = {destroyFunctionGenerator(contact)}

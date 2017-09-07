@@ -1,6 +1,4 @@
 import React from 'react';
-import Finance from '../finance/finance';
-import Contact from '../contact/contact';
 
 const DEFAULT_STATE = {id: "", status: "researching", info: "", name: "",
   contacts: [], finances: []};
