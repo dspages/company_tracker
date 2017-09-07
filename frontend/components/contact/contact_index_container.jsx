@@ -4,10 +4,11 @@ import ContactsIndex from './contact_index';
 import { createContact, editContact, destroyContact }
   from '../../actions/contact_actions';
 
-import { selectedContacts } from '../../reducers/selectors';
+import { selectedContacts, selectedFirmID} from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   selectedContacts: selectedContacts(state),
+  selectedFirmID: selectedFirmID(state),
   errors: state.errors
 });
 

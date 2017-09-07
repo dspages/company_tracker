@@ -46,7 +46,7 @@ class ContactList extends React.Component {
           Create New Contact
           <ContactForm
             submitFunc = {createContact}
-            status = "researching"
+            company_id = {this.props.selectedFirmID}
             />
         </div>
       </div>

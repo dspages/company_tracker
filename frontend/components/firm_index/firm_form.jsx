@@ -7,13 +7,9 @@ class FirmForm extends React.Component {
   constructor(props){
     super(props);
     this.state = props;
-    //console.log(props);
   }
 
   componentDidMount(){
-    // console.log("mounting");
-    // this.forceUpdate();
-    this.render();
   }
 
   submitForm (event) {
@@ -45,10 +41,10 @@ class FirmForm extends React.Component {
         <div className = "new-firm-column">
          <br></br>
          <label>Name:
-         <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "title" type = "text"></input>
+         <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>
          </label>
          <label>Info:
-         <input value = {this.state.info} onChange = {this.changeInfo.bind(this)} id = "body" type = "text"></input>
+         <input value = {this.state.info} onChange = {this.changeInfo.bind(this)} id = "info" type = "text"></input>
          </label>
          <label>Status:
            <select value = {this.state.status} onChange = {this.changeStatus.bind(this)}>
