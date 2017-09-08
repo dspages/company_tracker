@@ -1,7 +1,7 @@
 class FinancesController < ApplicationController
+
   def create
     @finance = Finance.new(finance_params)
-
     if @finance.save
       render :show
     else
@@ -9,9 +9,11 @@ class FinancesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def update
     @finance = Finance.find(params[:id])
-
     if @finance.update(finance_params)
       render :show
     else
@@ -32,4 +34,5 @@ class FinancesController < ApplicationController
     :valuation, :assets, :gross_income,
     :expenses, :year)
   end
+  
 end

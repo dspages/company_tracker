@@ -9,6 +9,10 @@ export const oneFirm = ({firms}, id) => {
   return firms.firmList[id];
 };
 
+export const selectedFinances = ({firms}) => {
+  return firms.firmList[firms.currentFirm].finances;
+};
+
 export const selectedFirmID = ({firms}) => {
     return firms.currentFirm;
 };

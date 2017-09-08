@@ -6,6 +6,13 @@ export const CREATE_SINGLE_CONTACT = "CREATE_SINGLE_CONTACT";
 
 import * as APIUtil from '../util/api_util';
 
+export const requestSingleContact = (id) => (dispatch) => {
+  return APIUtil.fetchContact(id).then(contact => {
+    dispatch(receiveSingleContact(contact));
+    return contact;
+  });
+};
+
 export const createContact = ccontact => dispatch => (
   APIUtil.createContact(ccontact).then(contact => {
     dispatch(createSingleContact(contact));

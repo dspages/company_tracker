@@ -1,4 +1,5 @@
 class Api::FirmsController < ApplicationController
+  
   def index
     @firms = Firm.all
   end

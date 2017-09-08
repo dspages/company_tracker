@@ -1,12 +1,15 @@
 class Api::ContactsController < ApplicationController
+
   def create
     @contact = Contact.new(contact_params)
-
     if @contact.save
       render :show
     else
       render json: @contact.errors.full_messages, status: 422
     end
+  end
+
+  def show
   end
 
   def update
@@ -31,6 +34,5 @@ class Api::ContactsController < ApplicationController
     params.require(:contact).permit(:name, :email, :company_id,
     :notes)
   end
-
 
 end

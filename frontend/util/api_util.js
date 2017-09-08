@@ -38,6 +38,12 @@ export const deleteFirm = firm => {
   );
 };
 
+export const fetchFinance = id => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/finances/${id}`,
+  })
+);
 
 export const createFinance = (finance) => {
     return ($.ajax({
@@ -64,6 +70,12 @@ export const deleteFinance = finance => {
   );
 };
 
+export const fetchContact = id => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/contacts/${id}`,
+  })
+);
 
 export const createContact = (contact) => {
     return ($.ajax({

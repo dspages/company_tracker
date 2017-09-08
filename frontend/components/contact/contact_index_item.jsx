@@ -34,21 +34,21 @@ class ContactIndexItem extends React.Component{
    render(){
      return(
        <li className="derived-index-item">
-         {this.props.name}
          <div className = "derived-index-part">
          <label>Name:
-         <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>
+           {this.props.name}
          </label>
          <label>Notes:
-         <input value = {this.state.notes} onChange = {this.changeNotes.bind(this)} id = "notes" type = "text"></input>
+           {this.props.notes}
          </label>
          <label>Email:
-           <input value = {this.state.email} onChange = {this.changeEmail.bind(this)}/>
+           {this.props.email}
         </label>
         </div>
         <div className = "derived-index-part">
-          <button className = "item-part" onClick={this.submitForm.bind(this)}> Update
-          </button>
+          <Link className="item-part" to={`/contacts/${this.props.id}/edit`}>
+           Edit
+          </Link>
           <button className = "item-part" onClick={this.props.destroyContact.bind(this)}> Delete
           </button>
           </div>
