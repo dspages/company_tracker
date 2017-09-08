@@ -1,5 +1,6 @@
 
 export const RECEIVE_SINGLE_CONTACT = "RECEIVE_SINGLE_CONTACT";
+export const VIEW_SINGLE_CONTACT = "VIEW_SINGLE_CONTACT";
 export const REMOVE_SINGLE_CONTACT = "REMOVE_SINGLE_CONTACT";
 export const RECEIVE_CONTACT_ERRORS = "RECEIVE_CONTACT_ERRORS";
 export const CREATE_SINGLE_CONTACT = "CREATE_SINGLE_CONTACT";
@@ -8,7 +9,7 @@ import * as APIUtil from '../util/api_util';
 
 export const requestSingleContact = (id) => (dispatch) => {
   return APIUtil.fetchContact(id).then(contact => {
-    dispatch(receiveSingleContact(contact));
+    dispatch(viewSingleContact(contact));
     return contact;
   });
 };
@@ -22,7 +23,7 @@ export const createContact = ccontact => dispatch => (
 
 export const editContact = econtact => dispatch => (
   APIUtil.editContact(econtact).then(contact => {
-    dispatch(receiveSingleContact(contact));
+    dispatch(viewSingleContact(contact));
     return contact;
   }).fail(err => dispatch(receiveContactErrors(err.responseJSON)))
 );
@@ -41,6 +42,11 @@ export const createSingleContact = contact => ({
 
 export const receiveSingleContact = contact => ({
   type: RECEIVE_SINGLE_CONTACT,
+  contact
+});
+
+export const viewSingleContact = contact => ({
+  type: VIEW_SINGLE_CONTACT,
   contact
 });
 

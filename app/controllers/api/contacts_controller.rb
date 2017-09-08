@@ -10,11 +10,11 @@ class Api::ContactsController < ApplicationController
   end
 
   def show
+    @contact = Contact.find(params[:id])
   end
 
   def update
     @contact = Contact.find(params[:id])
-
     if @contact.update(contact_params)
       render :show
     else

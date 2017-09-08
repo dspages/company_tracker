@@ -10,6 +10,7 @@ class FinancesController < ApplicationController
   end
 
   def show
+    @contact = Contact.find(params[:id])
   end
 
   def update
@@ -34,5 +35,5 @@ class FinancesController < ApplicationController
     :valuation, :assets, :gross_income,
     :expenses, :year)
   end
-  
+
 end
