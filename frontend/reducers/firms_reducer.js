@@ -51,11 +51,14 @@ const FirmsReducer = (state = defaultState, action) => {
       nextState.firmList[action.contact.company_id].contacts = contacts;
       return nextState;
     case REMOVE_SINGLE_CONTACT:
+    console.log("deleting...");
+    console.log(action.contact);
       contacts = nextState.firmList[action.contact.company_id].contacts;
       contacts = contacts.filter(function(el) {
         return el.id !== action.contact.id;
       });
       nextState.firmList[action.contact.company_id].contacts = contacts;
+      console.log(nextState);
       return nextState;
     default: return state;
   }

@@ -18,11 +18,12 @@ class FirmList extends React.Component {
     const destroyFunctionGenerator = (dfirm) => {
       return () => {this.props.destroyFirm(dfirm);};
     };
-    let key=1;
+    let key = 1;
     let firmListItems;
     if(Object.values(firms.firmList).length > 0)
     {
-      firmListItems = Object.values(firms.firmList).map(firm => (
+      firmListItems = Object.values(firms.firmList);
+      firmListItems = firmListItems.map(firm => (
           <FirmIndexItem
           name = {firm.name}
           status = {firm.status}
@@ -35,7 +36,6 @@ class FirmList extends React.Component {
     }else{
       firmListItems = "";
     }
-
     return(
       <div>
         <h1 className = "header">All Firms</h1>

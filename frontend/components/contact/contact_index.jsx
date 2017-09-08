@@ -30,6 +30,7 @@ class ContactList extends React.Component {
           id = {contact.id}
           company_id = {this.props.id}
           destroyContact = {destroyFunctionGenerator(contact)}
+          editContact = {editContact}
           />
         )
       );
@@ -39,7 +40,7 @@ class ContactList extends React.Component {
 
     return(
       <div>
-        <h1 className = "header">All Contacts</h1>
+        <h1 className = "header">Firm Contacts</h1>
         <div className = "main-box">
           <ul className = "contact-list">
             {contactListItems}

@@ -28,13 +28,21 @@
    margin: 5px;
  }
 
- .post-index-item{
+ .derived-index-item{
    display: flex;
-   justify-content: flex-end;
+   justify-content: space-around;
+   flex-direction: row;
    width: 350px;
    list-style: none;
    padding: 5px;
    margin: 5px;
+   border: 1px solid black;
+ }
+
+ .derived-index-part{
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
  }
 
  .item-part{
