@@ -21,12 +21,8 @@ class Api::ContactsController < ApplicationController
 
   def destroy
     @contact = Contact.find(params[:id])
-
-    if @contact.destroy
-      render :show
-    else
-      render json: @contact.errors.full_messages, status: 422
-    end
+    @contact.delete
+    render :show
   end
 
   private

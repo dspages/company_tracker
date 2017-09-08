@@ -21,12 +21,8 @@ class FinancesController < ApplicationController
 
   def destroy
     @finance = Finance.find(params[:id])
-
-    if @finance.destroy
-      render :show
-    else
-      render json: @finance.errors.full_messages, status: 422
-    end
+    @finance.delete
+    render :show
   end
 
   private

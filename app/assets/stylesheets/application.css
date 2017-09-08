@@ -13,3 +13,78 @@
  *= require_tree .
  *= require_self
  */
+ button{
+    border-radius: 5px;
+  }
+
+  submit{
+    border-radius: 3px;
+  }
+
+ .header{
+   display: flex;
+   justify-content: center;
+   padding: 5px;
+   margin: 5px;
+ }
+
+ .post-index-item{
+   display: flex;
+   justify-content: flex-end;
+   width: 350px;
+   list-style: none;
+   padding: 5px;
+   margin: 5px;
+ }
+
+ .item-part{
+   padding: 5px;
+   margin: 5px;
+ }
+
+ .main-box{
+   display: flex;
+   flex-direction: row;
+ }
+
+ .main{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .edit{
+   border: 1px solid black;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   width: 200px;
+   padding: 10px;
+   margin: 10px;
+ }
+
+ .show{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   margin: 25px;
+   padding: 10px;
+   border: 1px solid black;
+ }
+
+ .edit-item{
+   margin: 5px;
+   padding: 5px;
+ }
+
+ .new-form{
+   height: 120px;
+   margin: 30px;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: flex-end;
+   border: 1px solid black;
+ }

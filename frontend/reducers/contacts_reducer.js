@@ -1,9 +1,9 @@
 import merge from 'lodash/merge';
 import {RECEIVE_SINGLE_CONTACT,
-  RECEIVE_ALL_CONTACTS,
   REMOVE_SINGLE_CONTACT,
   RECEIVE_CONTACT_ERRORS,
   CREATE_SINGLE_CONTACT} from "../actions/contact_actions";
+  import {RECEIVE_SINGLE_FIRM} from "../actions/firm_actions";
 
 const defaultState = {
   contactList: {},
@@ -12,20 +12,15 @@ const defaultState = {
 };
 
 const ContactsReducer = (state = defaultState, action) => {
-
   Object.freeze(state);
   switch(action.type){
+    case RECEIVE_SINGLE_FIRM:
+    console.log(action);
+    return merge({}, state, {contactList: action.contacts});
     case CREATE_SINGLE_CONTACT:
-    return merge({}, state, {firmList: { [action.firm.id]: action.contact }});
+    return merge({}, state, {contactList: { [action.contact.id]: action.contact }});
     case RECEIVE_SINGLE_CONTACT:
-      return merge({}, state, {currentContact: action.contact.id, contactList: { [action.contact.id]: action.contact }});
-    case RECEIVE_ALL_CONTACTS:
-      const contact = action.contacts;
-      let obj={
-        contactList: contact,
-        currentContact: -1
-      };
-    return obj;
+      return merge({}, state, {contactList: { [action.contact.id]: action.contact }});
     case REMOVE_SINGLE_CONTACT:
       let nextState = merge({}, state);
       delete nextState.contactList[action.contact.id];

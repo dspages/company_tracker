@@ -39,6 +39,7 @@ class FirmForm extends React.Component {
     return (
       <form className = "new-form">
         <div className = "new-firm-column">
+          Firm Form
          <br></br>
          <label>Name:
          <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>

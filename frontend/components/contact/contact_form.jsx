@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DEFAULT_STATE = {id: "", name: "", notes: "", email: ""};
+const DEFAULT_STATE = {id: "", name: "", notes: "", email: "", company_id: ""};
 
 class ContactForm extends React.Component {
   constructor(props){
@@ -34,6 +34,7 @@ class ContactForm extends React.Component {
     return (<div>
       <form className = "new-form">
         <div className = "new-firm-column">
+          Contact Form
          <br></br>
          <label>Name:
          <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>

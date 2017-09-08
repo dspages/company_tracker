@@ -28,6 +28,7 @@ class ContactList extends React.Component {
           notes = {contact.notes}
           key = {key++}
           id = {contact.id}
+          company_id = {this.props.id}
           destroyContact = {destroyFunctionGenerator(contact)}
           />
         )
@@ -43,10 +44,9 @@ class ContactList extends React.Component {
           <ul className = "contact-list">
             {contactListItems}
           </ul>
-          Create New Contact
           <ContactForm
             submitFunc = {createContact}
-            company_id = {this.props.selectedFirmID}
+            company_id = {this.props.id}
             />
         </div>
       </div>

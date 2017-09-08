@@ -12,12 +12,12 @@ export const fetchFirm = id => (
   })
 );
 
-export const createFirm = (firm, contacts, finances) => {
+export const createFirm = (firm) => {
   console.log(firm);
     return ($.ajax({
       method: 'POST',
       url: '/api/firms',
-      data: {firm: firm, contacts: contacts, finances: finances}
+      data: {firm: firm}
     })
   );
 };

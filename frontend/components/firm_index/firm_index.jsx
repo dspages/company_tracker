@@ -43,7 +43,6 @@ class FirmList extends React.Component {
           <ul className = "firm-list">
             {firmListItems}
           </ul>
-          Create New Firm
           <FirmForm
             submitFunc = {createFirm}
             status = "researching"
