@@ -10,7 +10,7 @@ class FirmShow extends React.Component{
 
   componentDidMount(){
     this.props.requestFirm(this.props.match.params.firmID);
-  }
+  } 
 
   render(){
     if(this.props.firm){
