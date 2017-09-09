@@ -38,14 +38,14 @@ class FirmForm extends React.Component {
   render(){
     return (
       <form className = "new-form">
-        <div className = "new-firm-column">
+        <div className = "new-form-row">
           Firm Form
          <br></br>
          <label>Name:
          <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>
          </label>
          <label>Info:
-         <input value = {this.state.info} onChange = {this.changeInfo.bind(this)} id = "info" type = "text"></input>
+         <textarea value = {this.state.info} onChange = {this.changeInfo.bind(this)} id = "info" type = "textarea"></textarea>
          </label>
          <label>Status:
            <select value = {this.state.status} onChange = {this.changeStatus.bind(this)}>

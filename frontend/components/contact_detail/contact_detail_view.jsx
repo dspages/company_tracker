@@ -21,9 +21,11 @@ class ContactDetailView extends React.Component {
         <Link className="item-part" to={`/firms/${this.props.contact.company_id}`}>
          Return to Firm Page
         </Link>
-        {this.props.contact.name}
-        {this.props.contact.notes}
-        {this.props.contact.email}
+        <div className = "info-list">
+          <text>Name: {this.props.contact.name}</text>
+          <text>Notes: {this.props.contact.notes}</text>
+          <text>Email: {this.props.contact.email}</text>
+        </div>
         <ContactForm
           name = {this.props.contact.name}
           notes = {this.props.contact.notes}

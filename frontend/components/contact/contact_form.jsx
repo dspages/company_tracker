@@ -34,7 +34,7 @@ class ContactForm extends React.Component {
   render(){
     return (<div>
       <form className = "new-form">
-        <div className = "new-firm-column">
+        <div className = "new-form-row">
           Contact Form
          <br></br>
          <label>Name:

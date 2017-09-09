@@ -10,7 +10,7 @@ class FirmIndexItem extends React.Component{
    render(){
     //  console.log(this.props);
      return(
-       <li className="post-index-item">
+       <li className="main-index-item">
           <Link className="item-part" to={`/firms/${this.props.id}`}>
            {this.props.name}
          </Link>
