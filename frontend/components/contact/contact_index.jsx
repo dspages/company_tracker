@@ -12,7 +12,6 @@ class ContactList extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     const {selectedContacts, editContact, createContact, errors} = this.props;
     const destroyFunctionGenerator = (dcontact) => {
       return () => {this.props.destroyContact(dcontact);};

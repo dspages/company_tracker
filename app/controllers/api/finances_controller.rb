@@ -1,4 +1,4 @@
-class FinancesController < ApplicationController
+class Api::FinancesController < ApplicationController
 
   def create
     @finance = Finance.new(finance_params)
@@ -10,7 +10,7 @@ class FinancesController < ApplicationController
   end
 
   def show
-    @contact = Contact.find(params[:id])
+    @finance = Finance.find(params[:id])
   end
 
   def update
@@ -33,7 +33,7 @@ class FinancesController < ApplicationController
   def finance_params
     params.require(:finance).permit(:liabilities,
     :valuation, :assets, :gross_income,
-    :expenses, :year)
+    :expenses, :year, :company_id)
   end
 
 end

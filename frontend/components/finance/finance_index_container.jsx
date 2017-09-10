@@ -1,0 +1,24 @@
+import { connect } from 'react-redux';
+import FinancesIndex from './finance_index';
+
+import { createFinance, editFinance, destroyFinance }
+  from '../../actions/finance_actions';
+
+import { selectedFinances, selectedFirmID} from '../../reducers/selectors';
+
+const mapStateToProps = state => ({
+  selectedFinances: selectedFinances(state),
+  selectedFirmID: selectedFirmID(state),
+  errors: state.errors
+});
+
+const mapDispatchToProps = dispatch => ({
+  destroyFinance: Finance => dispatch(destroyFinance(Finance)),
+  createFinance: (Finance) => dispatch(createFinance(Finance)),
+  editFinance: Finance => dispatch(editFinance(Finance))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FinancesIndex);

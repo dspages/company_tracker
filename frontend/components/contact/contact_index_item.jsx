@@ -6,29 +6,6 @@ class ContactIndexItem extends React.Component{
   constructor(props) {
     super(props);
     this.state = props;
-    console.log(props);
-  }
-
-  submitForm (event) {
-    event.preventDefault();
-    this.props.editContact({
-      name: this.state.name,
-      notes: this.state.notes,
-      email: this.state.email,
-      company_id: this.state.company_id,
-      id: this.state.id});
-  }
-
-  changeName (event) {
-    this.setState({name: event.target.value});
-  }
-
-  changeNotes (event) {
-    this.setState({notes: event.target.value});
-  }
-
-  changeEmail (event) {
-    this.setState({email: event.target.value});
   }
 
    render(){

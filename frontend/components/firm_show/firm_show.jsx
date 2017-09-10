@@ -2,6 +2,7 @@ import React from 'react';
 import FirmForm from '../firm_index/firm_form';
 import { Link } from 'react-router-dom';
 import ContactIndexContainer from '../contact/contact_index_container.jsx';
+import FinanceIndexContainer from '../finance/finance_index_container.jsx';
 
 class FirmShow extends React.Component{
   constructor(props){
@@ -10,7 +11,7 @@ class FirmShow extends React.Component{
 
   componentDidMount(){
     this.props.requestFirm(this.props.match.params.firmID);
-  } 
+  }
 
   render(){
     if(this.props.firm){
@@ -31,6 +32,9 @@ class FirmShow extends React.Component{
             submitFunc = {this.props.editFirm}
             />
             <ContactIndexContainer
+              id = {this.props.firm.id}
+              />
+            <FinanceIndexContainer
               id = {this.props.firm.id}
               />
         </div>

@@ -6,7 +6,6 @@ class ContactForm extends React.Component {
   constructor(props){
     super(props);
     this.state = props;
-    console.log(props);
   }
 
   submitForm (event) {
@@ -36,6 +35,7 @@ class ContactForm extends React.Component {
       <form className = "new-form">
         <div className = "new-form-row">
           Contact Form
+          {this.props.errors}
          <br></br>
          <label>Name:
          <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>

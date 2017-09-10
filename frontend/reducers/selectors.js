@@ -13,6 +13,10 @@ export const oneContact = ({contacts}) => {
   return contacts.contact;
 };
 
+export const oneFinance = ({finances}) => {
+  return finances.finance;
+};
+
 export const selectedFinances = ({firms}) => {
   return firms.firmList[firms.currentFirm].finances;
 };
