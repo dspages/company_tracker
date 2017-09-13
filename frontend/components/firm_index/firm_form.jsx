@@ -7,6 +7,10 @@ class FirmForm extends React.Component {
   constructor(props){
     super(props);
     this.state = props;
+    this.changeName = this.changeName.bind(this);
+    this.changeInfo = this.changeInfo.bind(this);
+    this.changeStatus = this.changeStatus.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   componentDidMount(){
@@ -43,20 +47,20 @@ class FirmForm extends React.Component {
           {this.props.errors}
          <br></br>
          <label>Name:
-         <input value = {this.state.name} onChange = {this.changeName.bind(this)} id = "name" type = "text"></input>
+         <input value = {this.state.name} onChange = {this.changeName} id = "name" type = "text"></input>
          </label>
          <label>Info:
-         <textarea value = {this.state.info} onChange = {this.changeInfo.bind(this)} id = "info" type = "textarea"></textarea>
+         <textarea value = {this.state.info} onChange = {this.changeInfo} id = "info" type = "textarea"></textarea>
          </label>
          <label>Status:
-           <select value = {this.state.status} onChange = {this.changeStatus.bind(this)}>
+           <select value = {this.state.status} onChange = {this.changeStatus}>
             <option value = "researching">Researching</option>
             <option value = "pending">Pending</option>
             <option value = "approved">Approved</option>
             <option value = "denied">Denied</option>
           </select>
         </label>
-         <input type = "submit" onClick = {this.submitForm.bind(this)}></input>
+         <button onClick = {this.submitForm}>Confirm</button>
         </div>
        </form>
     );

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component correctly renders 1`] = `
+<div>
+  <form
+    className="new-form"
+  >
+    <div
+      className="new-form-row"
+    >
+      Finance Form
+      <label>
+        Fiscal Year:
+        <input
+          onChange={[Function]}
+          value={undefined}
+        />
+      </label>
+      <label>
+        Valuation:
+        <input
+          onChange={[Function]}
+          value={undefined}
+        />
+      </label>
+      <label>
+        Assets:
+        <input
+          onChange={[Function]}
+          value={undefined}
+        />
+      </label>
+      <label>
+        Liabilities:
+        <input
+          onChange={[Function]}
+          value={undefined}
+        />
+      </label>
+      <label>
+        Gross Income:
+        <input
+          onChange={[Function]}
+          value={undefined}
+        />
+      </label>
+      <label>
+        Expenses:
+        <input
+          onChange={[Function]}
+          value={undefined}
+        />
+      </label>
+      <button
+        onClick={[Function]}
+      >
+        Confirm
+      </button>
+    </div>
+  </form>
+</div>
+`;

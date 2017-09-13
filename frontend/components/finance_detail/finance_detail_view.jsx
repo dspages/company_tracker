@@ -22,12 +22,12 @@ class FinanceDetailView extends React.Component {
          Return to Firm Page
         </Link>
         <div className = "info-list">
-          <text>Year: {this.props.finance.year}</text>
-          <text>Assets: {this.props.finance.assets}</text>
-          <text>Liabilities: {this.props.finance.liabilities}</text>
-          <text>Valuation: {this.props.finance.valuation}</text>
-          <text>Gross Income: {this.props.finance.gross_income}</text>
-          <text>Expenses {this.props.finance.expenses}</text>
+          <text className = "info-list-item">Year: {this.props.finance.year}</text>
+          <text className = "info-list-item">Assets: {this.props.finance.assets}</text>
+          <text className = "info-list-item">Liabilities: {this.props.finance.liabilities}</text>
+          <text className = "info-list-item">Valuation: {this.props.finance.valuation}</text>
+          <text className = "info-list-item">Gross Income: {this.props.finance.gross_income}</text>
+          <text className = "info-list-item">Expenses {this.props.finance.expenses}</text>
         </div>
         <FinanceForm
           year = {this.props.finance.year}

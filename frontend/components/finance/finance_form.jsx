@@ -6,6 +6,13 @@ class FinanceForm extends React.Component {
   constructor(props){
     super(props);
     this.state = props;
+    this.changeYear = this.changeYear.bind(this);
+    this.changeValuation = this.changeValuation.bind(this);
+    this.changeAssets = this.changeAssets.bind(this);
+    this.changeLiabilities = this.changeLiabilities.bind(this);
+    this.changeGrossIncome = this.changeGrossIncome.bind(this);
+    this.changeExpenses = this.changeExpenses.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   submitForm (event) {
@@ -51,26 +58,25 @@ class FinanceForm extends React.Component {
         <div className = "new-form-row">
           Finance Form
           {this.props.errors}
-         <br></br>
-         <label>Year:
-         <input value = {this.state.year} onChange = {this.changeYear.bind(this)}></input>
+         <label>Fiscal Year:
+         <input value = {this.state.year} onChange = {this.changeYear}></input>
          </label>
          <label>Valuation:
-         <input value = {this.state.valuation} onChange = {this.changeValuation.bind(this)}></input>
+         <input value = {this.state.valuation} onChange = {this.changeValuation}></input>
          </label>
          <label>Assets:
-           <input value = {this.state.assets} onChange = {this.changeAssets.bind(this)}/>
+           <input value = {this.state.assets} onChange = {this.changeAssets}/>
          </label>
          <label>Liabilities:
-          <input value = {this.state.liabilities} onChange = {this.changeLiabilities.bind(this)}/>
+          <input value = {this.state.liabilities} onChange = {this.changeLiabilities}/>
          </label>
          <label>Gross Income:
-          <input value = {this.state.gross_income} onChange = {this.changeGrossIncome.bind(this)}/>
+          <input value = {this.state.gross_income} onChange = {this.changeGrossIncome}/>
          </label>
          <label>Expenses:
-          <input value = {this.state.expenses} onChange = {this.changeExpenses.bind(this)}/>
+          <input value = {this.state.expenses} onChange = {this.changeExpenses}/>
          </label>
-         <input type = "submit" onClick = {this.submitForm.bind(this)}></input>
+         <button onClick = {this.submitForm}>Confirm</button>
         </div>
        </form>
     </div>);

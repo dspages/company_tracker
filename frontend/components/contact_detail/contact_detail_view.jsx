@@ -22,9 +22,9 @@ class ContactDetailView extends React.Component {
          Return to Firm Page
         </Link>
         <div className = "info-list">
-          <text>Name: {this.props.contact.name}</text>
-          <text>Notes: {this.props.contact.notes}</text>
-          <text>Email: {this.props.contact.email}</text>
+          <text className = "info-list-item">Name: {this.props.contact.name}</text>
+          <text className = "info-list-item">Notes: {this.props.contact.notes}</text>
+          <text className = "info-list-item">Email: {this.props.contact.email}</text>
         </div>
         <ContactForm
           name = {this.props.contact.name}

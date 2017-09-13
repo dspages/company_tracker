@@ -15,10 +15,7 @@
  */
  button{
     border-radius: 5px;
-  }
-
-  submit{
-    border-radius: 3px;
+    margin-top: 3px;
   }
 
   .main{
@@ -43,6 +40,10 @@
    border: 1px solid black;
  }
 
+ .info-list-item{
+   padding: 4px;
+ }
+
  .derived-index-part{
    display: flex;
    justify-content: space-around;
@@ -61,7 +62,7 @@
 
  .main-index-item{
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
    flex-direction: row;
    width: 350px;
    list-style: none;
