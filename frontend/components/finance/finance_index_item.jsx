@@ -12,22 +12,22 @@ class FinanceIndexItem extends React.Component{
      return(
        <li className="derived-index-item">
          <div className = "derived-index-part">
-         <label>Year:
+         <label className = "derived-index-category"><text className = "padded-text">Year: </text>
            {this.props.year}
          </label>
-         <label>Assets:
+         <label className = "derived-index-category"><text className = "padded-text">Assets: </text>
            {this.props.assets}
          </label>
-         <label>Liabilities:
+         <label className = "derived-index-category"><text className = "padded-text">Liabilities: </text>
            {this.props.liabilities}
         </label>
-        <label>Valuation:
+        <label className = "derived-index-category"><text className = "padded-text">Valuation: </text>
           {this.props.valuation}
        </label>
-       <label>Gross Income:
+       <label className = "derived-index-category"><text className = "padded-text">Gross Income: </text>
          {this.props.gross_income}
       </label>
-      <label>Expenses:
+      <label className = "derived-index-category"><text className = "padded-text">Expenses: </text>
         {this.props.expenses}
      </label>
         </div>

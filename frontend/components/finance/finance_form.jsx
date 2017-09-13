@@ -61,14 +61,14 @@ class FinanceForm extends React.Component {
          <label>Fiscal Year:
          <input value = {this.state.year} onChange = {this.changeYear}></input>
          </label>
-         <label>Valuation:
-         <input value = {this.state.valuation} onChange = {this.changeValuation}></input>
-         </label>
          <label>Assets:
            <input value = {this.state.assets} onChange = {this.changeAssets}/>
          </label>
          <label>Liabilities:
           <input value = {this.state.liabilities} onChange = {this.changeLiabilities}/>
+         </label>
+         <label>Valuation:
+         <input value = {this.state.valuation} onChange = {this.changeValuation}></input>
          </label>
          <label>Gross Income:
           <input value = {this.state.gross_income} onChange = {this.changeGrossIncome}/>
