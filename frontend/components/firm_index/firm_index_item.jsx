@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import { Link } from 'react-router-dom';
 
 class FirmIndexItem extends React.Component{
+  
   constructor(props) {
     super(props);
   }
@@ -20,6 +21,7 @@ class FirmIndexItem extends React.Component{
        </li>
      );
    }
+
 }
 
 export default FirmIndexItem;

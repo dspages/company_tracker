@@ -89,6 +89,7 @@ class FirmList extends React.Component {
       </div>
     );
   }
+  
 }
 
 export default FirmList;

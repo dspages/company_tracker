@@ -1,8 +1,7 @@
 import React from 'react';
 
-const DEFAULT_STATE = {id: "", name: "", notes: "", email: "", company_id: ""};
-
 class ContactForm extends React.Component {
+
   constructor(props){
     super(props);
     this.state = props;
@@ -55,6 +54,7 @@ class ContactForm extends React.Component {
        </form>
     </div>);
   }
+
 }
 
 export default ContactForm;

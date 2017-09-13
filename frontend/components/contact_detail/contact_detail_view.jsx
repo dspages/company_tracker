@@ -3,6 +3,7 @@ import ContactForm from '../contact/contact_form.jsx';
 import { Link } from 'react-router-dom';
 
 class ContactDetailView extends React.Component {
+
   constructor(props){
     super(props);
   }
@@ -40,6 +41,7 @@ class ContactDetailView extends React.Component {
       return null;
     }
   }
+  
 }
 
 export default ContactDetailView;

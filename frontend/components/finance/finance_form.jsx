@@ -3,6 +3,7 @@ import React from 'react';
 const DEFAULT_STATE = {id: "", year: "", valuation: "", assets: "", liabilities: ""};
 
 class FinanceForm extends React.Component {
+
   constructor(props){
     super(props);
     this.state = props;
@@ -81,6 +82,7 @@ class FinanceForm extends React.Component {
        </form>
     </div>);
   }
+  
 }
 
 export default FinanceForm;

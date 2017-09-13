@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import { Link } from 'react-router-dom';
 
 class FinanceIndexItem extends React.Component{
+
   constructor(props) {
     super(props);
     this.state = props;
@@ -41,6 +42,7 @@ class FinanceIndexItem extends React.Component{
        </li>
      );
    }
+   
 }
 
 export default FinanceIndexItem;

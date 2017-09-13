@@ -3,6 +3,7 @@ import FinanceForm from '../finance/finance_form.jsx';
 import { Link } from 'react-router-dom';
 
 class FinanceDetailView extends React.Component {
+
   constructor(props){
     super(props);
   }
@@ -46,6 +47,7 @@ class FinanceDetailView extends React.Component {
       return null;
     }
   }
+  
 }
 
 export default FinanceDetailView;

@@ -4,6 +4,7 @@ const DEFAULT_STATE = {id: "", status: "researching", info: "", name: "",
   contacts: [], finances: []};
 
 class FirmForm extends React.Component {
+  
   constructor(props){
     super(props);
     this.state = props;

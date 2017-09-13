@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import { Link } from 'react-router-dom';
 
 class ContactIndexItem extends React.Component{
+
   constructor(props) {
     super(props);
     this.state = props;
@@ -32,6 +33,7 @@ class ContactIndexItem extends React.Component{
        </li>
      );
    }
+   
 }
 
 export default ContactIndexItem;

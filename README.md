@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Try it out live!
 
-Things you may want to cover:
+acquisitiontracker.herokuapp.com
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a company tracker app. You can use the site to create, read, update, and delete companies and also make finances and contacts associated with companies. The React front end is located in the frontend folder and the backend is located in the Rails backend is located in the app folder.

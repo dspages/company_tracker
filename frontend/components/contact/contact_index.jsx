@@ -52,6 +52,7 @@ class ContactList extends React.Component {
       </div>
     );
   }
+  
 }
 
 export default ContactList;

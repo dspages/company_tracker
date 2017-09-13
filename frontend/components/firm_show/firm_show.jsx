@@ -3,10 +3,11 @@ import FirmForm from '../firm_index/firm_form';
 import { Link } from 'react-router-dom';
 import ContactIndexContainer from '../contact/contact_index_container.jsx';
 import FinanceIndexContainer from '../finance/finance_index_container.jsx';
-import {linearGradient, Area, AreaChart, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import {sortByYear} from '../../util/sort_util';
+import RenderHelper from './chart_render_helper';
 
 class FirmShow extends React.Component{
+
   constructor(props){
     super(props);
     this.state = {financeVar1: "valuation"};
@@ -54,24 +55,10 @@ class FirmShow extends React.Component{
                <option value = "liabilities">Liabilities</option>
                <option value = "expenses">Expenses</option>
               </select>
-              <AreaChart width={730} height={250} data={data}
-                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <XAxis dataKey="year" />
-                <YAxis />
-                <CartesianGrid strokeDasharray="3 3" />
-                <Tooltip />
-                <Area type="monotone" dataKey={this.state.financeVar1} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-              </AreaChart>
+              <RenderHelper
+                data = {data}
+                financeVar1 = {this.state.financeVar1}
+                />
             </div>
         </div>
       );
@@ -79,6 +66,7 @@ class FirmShow extends React.Component{
       return null;
     }
   }
+  
 }
 
 export default FirmShow;

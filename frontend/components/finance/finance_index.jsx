@@ -55,6 +55,7 @@ class FinanceList extends React.Component {
       </div>
     );
   }
+
 }
 
 export default FinanceList;
