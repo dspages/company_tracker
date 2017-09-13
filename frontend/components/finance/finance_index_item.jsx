@@ -13,22 +13,28 @@ class FinanceIndexItem extends React.Component{
      return(
        <li className="derived-index-item">
          <div className = "derived-index-part">
-         <label className = "derived-index-category"><text className = "padded-text">Year: </text>
+         <label className = "derived-index-category">
+           <text className = "padded-text">Year: </text>
            {this.props.year}
          </label>
-         <label className = "derived-index-category"><text className = "padded-text">Assets: </text>
+         <label className = "derived-index-category">
+           <text className = "padded-text">Assets: </text>
            {this.props.assets}
          </label>
-         <label className = "derived-index-category"><text className = "padded-text">Liabilities: </text>
+         <label className = "derived-index-category">
+           <text className = "padded-text">Liabilities: </text>
            {this.props.liabilities}
         </label>
-        <label className = "derived-index-category"><text className = "padded-text">Valuation: </text>
+        <label className = "derived-index-category">
+          <text className = "padded-text">Valuation: </text>
           {this.props.valuation}
        </label>
-       <label className = "derived-index-category"><text className = "padded-text">Gross Income: </text>
+       <label className = "derived-index-category">
+         <text className = "padded-text">Gross Income: </text>
          {this.props.gross_income}
       </label>
-      <label className = "derived-index-category"><text className = "padded-text">Expenses: </text>
+      <label className = "derived-index-category">
+        <text className = "padded-text">Expenses: </text>
         {this.props.expenses}
      </label>
         </div>
@@ -36,13 +42,14 @@ class FinanceIndexItem extends React.Component{
           <Link className="item-part" to={`/finances/${this.props.id}/edit`}>
            Edit
           </Link>
-          <button className = "item-part" onClick={this.props.destroyFinance.bind(this)}> Delete
+          <button className = "item-part"
+            onClick={this.props.destroyFinance.bind(this)}> Delete
           </button>
           </div>
        </li>
      );
    }
-   
+
 }
 
 export default FinanceIndexItem;

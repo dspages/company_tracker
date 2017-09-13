@@ -41,10 +41,14 @@ class ContactForm extends React.Component {
           {this.props.errors}
          <br></br>
          <label>Name:
-         <input value = {this.state.name} onChange = {this.changeName} id = "name" type = "text"></input>
+         <input value = {this.state.name}
+           onChange = {this.changeName} id = "name" type = "text">
+         </input>
          </label>
          <label>Notes:
-         <input value = {this.state.notes} onChange = {this.changeNotes} id = "notes" type = "text"></input>
+         <input value = {this.state.notes}
+           onChange = {this.changeNotes} id = "notes" type = "text">
+         </input>
          </label>
          <label>Email:
            <input value = {this.state.email} onChange = {this.changeEmail}/>

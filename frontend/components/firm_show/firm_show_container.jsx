@@ -7,7 +7,6 @@ import { requestSingleFirm, editFirm }
 import { allFirms, oneFirm } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
-  // console.log(state);
     return {
     firm: oneFirm(state, state.firms.currentFirm),
     errors: state.errors

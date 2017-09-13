@@ -13,7 +13,6 @@ export const fetchFirm = id => (
 );
 
 export const createFirm = (firm) => {
-  console.log(firm);
     return ($.ajax({
       method: 'POST',
       url: '/api/firms',

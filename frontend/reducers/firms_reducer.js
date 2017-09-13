@@ -14,10 +14,10 @@ import {RECEIVE_SINGLE_FINANCE,
   CREATE_SINGLE_FINANCE} from "../actions/finance_actions";
 import {receiveContactHelper,
   createContactHelper,
-  removeContactHelper} from 'firms_contacts_reducer_helpers';
+  removeContactHelper} from './firm_contacts_reducer_helpers';
 import {receiveFinanceHelper,
   createFinanceHelper,
-  removeFinanceHelper} from 'firms_finances_reducer_helpers';
+  removeFinanceHelper} from './firm_finances_reducer_helpers';
 
 const defaultState = {
   firmList: {},
@@ -34,9 +34,9 @@ const FirmsReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_FIRM:
       return merge(nextState, {currentFirm: action.firm.id, firmList: { [action.firm.id]: action.firm }});
     case RECEIVE_ALL_FIRMS:
-      const firm = action.firms;
+      let allFirms = action.firms;
       let obj={
-        firmList: firm,
+        firmList: allFirms,
         currentFirm: -1
       };
       return obj;
@@ -57,7 +57,7 @@ const FirmsReducer = (state = defaultState, action) => {
       return createFinanceHelper(nextState, action);
     case REMOVE_SINGLE_FINANCE:
       return removeFinanceHelper(nextState, action);
-      
+
     default: return state;
   }
 };

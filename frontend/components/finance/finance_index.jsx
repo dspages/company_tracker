@@ -8,9 +8,6 @@ class FinanceList extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-  }
-
   render() {
     const {selectedFinances, editFinance, createFinance, errors} = this.props;
     const destroyFunctionGenerator = (dfinance) => {

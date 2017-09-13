@@ -8,9 +8,6 @@ class ContactList extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-  }
-
   render() {
     const {selectedContacts, editContact, createContact, errors} = this.props;
     const destroyFunctionGenerator = (dcontact) => {
@@ -52,7 +49,7 @@ class ContactList extends React.Component {
       </div>
     );
   }
-  
+
 }
 
 export default ContactList;

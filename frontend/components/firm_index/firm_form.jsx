@@ -1,10 +1,7 @@
 import React from 'react';
 
-const DEFAULT_STATE = {id: "", status: "researching", info: "", name: "",
-  contacts: [], finances: []};
-
 class FirmForm extends React.Component {
-  
+
   constructor(props){
     super(props);
     this.state = props;
@@ -12,9 +9,6 @@ class FirmForm extends React.Component {
     this.changeInfo = this.changeInfo.bind(this);
     this.changeStatus = this.changeStatus.bind(this);
     this.submitForm = this.submitForm.bind(this);
-  }
-
-  componentDidMount(){
   }
 
   submitForm (event) {

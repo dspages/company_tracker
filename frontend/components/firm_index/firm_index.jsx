@@ -36,7 +36,6 @@ class FirmList extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     const {firms, editFirm, createFirm, errors} = this.props;
     const destroyFunctionGenerator = (dfirm) => {
       return () => {this.props.destroyFirm(dfirm);};
@@ -89,7 +88,7 @@ class FirmList extends React.Component {
       </div>
     );
   }
-  
+
 }
 
 export default FirmList;

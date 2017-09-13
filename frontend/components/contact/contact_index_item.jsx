@@ -13,13 +13,16 @@ class ContactIndexItem extends React.Component{
      return(
        <li className="derived-index-item">
          <div className = "derived-index-part">
-         <label className = "derived-index-category"><text className = "padded-text">Name:</text>
+         <label className = "derived-index-category">
+           <text className = "padded-text">Name:</text>
            {this.props.name}
          </label>
-         <label className = "derived-index-category"><text className = "padded-text">Notes:</text>
+         <label className = "derived-index-category">
+           <text className = "padded-text">Notes:</text>
            {this.props.notes}
          </label>
-         <label className = "derived-index-category"><text className = "padded-text">Email:</text>
+         <label className = "derived-index-category">
+           <text className = "padded-text">Email:</text>
            {this.props.email}
         </label>
         </div>
@@ -33,7 +36,7 @@ class ContactIndexItem extends React.Component{
        </li>
      );
    }
-   
+
 }
 
 export default ContactIndexItem;
