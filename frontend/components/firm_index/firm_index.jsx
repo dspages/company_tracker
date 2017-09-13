@@ -6,8 +6,9 @@ class FirmList extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {searchVal: ""};
+    this.state = {searchVal: "", filter: "all"};
     this.changeSearchVal = this.changeSearchVal.bind(this);
+    this.changeStatusFilter = this.changeStatusFilter.bind(this);
   }
 
   componentDidMount() {
@@ -18,9 +19,20 @@ class FirmList extends React.Component {
     this.setState({searchVal: event.target.value});
   }
 
-  searchFilter(firm){//Returns FALSE if item is excluded by search criteria
+  changeStatusFilter(event){
+    this.setState({filter: event.target.value});
+  }
+
+//returns FALSE if item is excluded by search criteria
+  searchFilter(firm){
     return firm.name.toLowerCase().indexOf(
       this.state.searchVal.toLowerCase()) !== -1;
+  }
+
+//returns FALSE if item is excluded by filter criteria
+  statusFilter(firm){
+    return this.state.filter === "all" ||
+    firm.status === this.state.filter;
   }
 
   render() {
@@ -35,6 +47,7 @@ class FirmList extends React.Component {
     {
       firmListItems = Object.values(firms.firmList);
       firmListItems = firmListItems.filter(firm => this.searchFilter(firm));
+      firmListItems = firmListItems.filter(firm => this.statusFilter(firm));
       firmListItems = firmListItems.map(firm => (
           <FirmIndexItem
           name = {firm.name}
@@ -55,6 +68,15 @@ class FirmList extends React.Component {
           <input value={this.state.searchVal} onChange={this.changeSearchVal}>
           </input>
         </label>
+        <label>Choose by:
+          <select value = {this.state.filter} onChange = {this.changeStatusFilter}>
+           <option value = "all">All</option>
+           <option value = "researching">Researching</option>
+           <option value = "pending">Pending</option>
+           <option value = "approved">Approved</option>
+           <option value = "denied">Denied</option>
+         </select>
+       </label>
         <div className = "main-box">
           <ul className = "firm-list">
             {firmListItems}
