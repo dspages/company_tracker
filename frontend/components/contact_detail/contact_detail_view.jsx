@@ -33,6 +33,7 @@ class ContactDetailView extends React.Component {
           email = {this.props.contact.email}
           company_id = {this.props.contact.company_id}
           id = {this.props.contact.id}
+          editContactLocal = {this.props.editContactLocal}
           submitFunc = {this.props.editContact}
           />
       </div>
@@ -41,7 +42,7 @@ class ContactDetailView extends React.Component {
       return null;
     }
   }
-  
+
 }
 
 export default ContactDetailView;

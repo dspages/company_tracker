@@ -1,5 +1,4 @@
 
-
 export const receiveFinanceHelper = (nextState, action) => {
   let finances = nextState.firmList[action.finance.company_id].finances;
   finances = finances.filter(function(el) {

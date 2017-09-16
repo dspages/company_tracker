@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ContactDetailView from './contact_detail_view';
-  import { createContact, editContact, destroyContact, requestSingleContact }
+  import { createContact, editContact,
+    editContactLocal, destroyContact, requestSingleContact }
     from '../../actions/contact_actions';
 
 import { oneContact } from '../../reducers/selectors';
@@ -14,7 +15,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   requestContact: (id) => dispatch(requestSingleContact(id)),
-  editContact: Contact => dispatch(editContact(Contact))
+  editContact: Contact => dispatch(editContact(Contact)),
+  editContactLocal: Contact => dispatch(editContactLocal(Contact))
 });
 
 export default connect(

@@ -9,7 +9,8 @@ class FinanceList extends React.Component {
   }
 
   render() {
-    const {selectedFinances, editFinance, createFinance, errors} = this.props;
+    const { editFinanceLocal, selectedFinances, editFinance,
+      createFinance, errors} = this.props;
     const destroyFunctionGenerator = (dfinance) => {
       return () => {this.props.destroyFinance(dfinance);};
     };
@@ -29,6 +30,7 @@ class FinanceList extends React.Component {
           id = {finance.id}
           company_id = {this.props.id}
           destroyFinance = {destroyFunctionGenerator(finance)}
+          editFinanceLocal = {editFinanceLocal}
           editFinance = {editFinance}
           />
         )
@@ -45,6 +47,13 @@ class FinanceList extends React.Component {
             {financeListItems}
           </ul>
           <FinanceForm
+            year = {this.props.finance.year}
+            liabilities = {this.props.finance.liabilities}
+            assets = {this.props.finance.assets}
+            gross_income = {this.props.finance.gross_income}
+            expenses = {this.props.finance.expenses}
+            valuation = {this.props.finance.valuation}
+            editFinanceLocal = {editFinanceLocal}
             submitFunc = {createFinance}
             company_id = {this.props.id}
             />

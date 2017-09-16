@@ -9,7 +9,8 @@ class ContactList extends React.Component {
   }
 
   render() {
-    const {selectedContacts, editContact, createContact, errors} = this.props;
+    const { editContactLocal, selectedContacts,
+      editContact, createContact, errors } = this.props;
     const destroyFunctionGenerator = (dcontact) => {
       return () => {this.props.destroyContact(dcontact);};
     };
@@ -42,6 +43,10 @@ class ContactList extends React.Component {
             {contactListItems}
           </ul>
           <ContactForm
+            name = {this.props.contact.name}
+            notes = {this.props.contact.notes}
+            email = {this.props.contact.email}
+            editContactLocal = {editContactLocal}
             submitFunc = {createContact}
             company_id = {this.props.id}
             />

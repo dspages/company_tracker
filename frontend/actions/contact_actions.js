@@ -28,6 +28,11 @@ export const editContact = econtact => dispatch => (
   }).fail(err => dispatch(receiveContactErrors(err.responseJSON)))
 );
 
+export const editContactLocal = lcontact => dispatch => {
+    dispatch(viewSingleContact(lcontact));
+    return lcontact;
+  };
+
 export const destroyContact = dcontact => dispatch => (
   APIUtil.deleteContact(dcontact).then(() => {
     dispatch(removeSingleContact(dcontact));

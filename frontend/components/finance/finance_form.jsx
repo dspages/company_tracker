@@ -1,12 +1,9 @@
 import React from 'react';
 
-const DEFAULT_STATE = {id: "", year: "", valuation: "", assets: "", liabilities: ""};
-
 class FinanceForm extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = props;
     this.changeYear = this.changeYear.bind(this);
     this.changeValuation = this.changeValuation.bind(this);
     this.changeAssets = this.changeAssets.bind(this);
@@ -19,38 +16,38 @@ class FinanceForm extends React.Component {
   submitForm (event) {
     event.preventDefault();
     this.props.submitFunc({
-      year: this.state.year,
-      assets: this.state.assets,
-      liabilities: this.state.liabilities,
-      gross_income: this.state.gross_income,
-      expenses: this.state.expenses,
-      valuation: this.state.valuation,
-      company_id: this.state.company_id,
-      id: this.state.id});
+      year: this.props.year,
+      assets: this.props.assets,
+      liabilities: this.props.liabilities,
+      gross_income: this.props.gross_income,
+      expenses: this.props.expenses,
+      valuation: this.props.valuation,
+      company_id: this.props.company_id,
+      id: this.props.id});
   }
 
   changeYear (event) {
-    this.setState({year: event.target.value});
+    this.props.editFinanceLocal({year: event.target.value});
   }
 
   changeAssets (event) {
-    this.setState({assets: event.target.value});
+    this.props.editFinanceLocal({assets: event.target.value});
   }
 
   changeLiabilities (event) {
-    this.setState({liabilities: event.target.value});
+    this.props.editFinanceLocal({liabilities: event.target.value});
   }
 
   changeGrossIncome (event) {
-    this.setState({gross_income: event.target.value});
+    this.props.editFinanceLocal({gross_income: event.target.value});
   }
 
   changeExpenses (event) {
-    this.setState({expenses: event.target.value});
+    this.props.editFinanceLocal({expenses: event.target.value});
   }
 
   changeValuation (event) {
-    this.setState({valuation: event.target.value});
+    this.props.editFinanceLocal({valuation: event.target.value});
   }
 
   render(){
@@ -60,29 +57,29 @@ class FinanceForm extends React.Component {
           Finance Form
           {this.props.errors}
          <label>Fiscal Year:
-         <input value = {this.state.year} onChange = {this.changeYear}></input>
+         <input value = {this.props.year} onChange = {this.changeYear}></input>
          </label>
          <label>Assets:
-           <input value = {this.state.assets} onChange = {this.changeAssets}/>
+           <input value = {this.props.assets} onChange = {this.changeAssets}/>
          </label>
          <label>Liabilities:
-          <input value = {this.state.liabilities} onChange = {this.changeLiabilities}/>
+          <input value = {this.props.liabilities} onChange = {this.changeLiabilities}/>
          </label>
          <label>Valuation:
-         <input value = {this.state.valuation} onChange = {this.changeValuation}></input>
+         <input value = {this.props.valuation} onChange = {this.changeValuation}></input>
          </label>
          <label>Gross Income:
-          <input value = {this.state.gross_income} onChange = {this.changeGrossIncome}/>
+          <input value = {this.props.gross_income} onChange = {this.changeGrossIncome}/>
          </label>
          <label>Expenses:
-          <input value = {this.state.expenses} onChange = {this.changeExpenses}/>
+          <input value = {this.props.expenses} onChange = {this.changeExpenses}/>
          </label>
          <button onClick = {this.submitForm}>Confirm</button>
         </div>
        </form>
     </div>);
   }
-  
+
 }
 
 export default FinanceForm;

@@ -28,6 +28,11 @@ export const editFinance = efinance => dispatch => (
   }).fail(err => dispatch(receiveFinanceErrors(err.responseJSON)))
 );
 
+export const editFinanceLocal = lfinance => dispatch => {
+    dispatch(viewSingleFinance(lfinance));
+    return lfinance;
+  };
+
 export const destroyFinance = dfinance => dispatch => (
   APIUtil.deleteFinance(dfinance).then(() => {
     dispatch(removeSingleFinance(dfinance));

@@ -39,6 +39,7 @@ class FinanceDetailView extends React.Component {
           expenses = {this.props.finance.expenses}
           company_id = {this.props.finance.company_id}
           id = {this.props.finance.id}
+          editFinanceLocal = {this.props.editFinanceLocal}
           submitFunc = {this.props.editFinance}
           />
       </div>
@@ -47,7 +48,7 @@ class FinanceDetailView extends React.Component {
       return null;
     }
   }
-  
+
 }
 
 export default FinanceDetailView;

@@ -1,5 +1,4 @@
 
-
 export const receiveContactHelper = (nextState, action) => {
   let contacts = nextState.firmList[action.contact.company_id].contacts;
   contacts = contacts.filter(function(el) {
@@ -9,7 +8,6 @@ export const receiveContactHelper = (nextState, action) => {
   nextState.firmList[action.contact.company_id].contacts = contacts;
   return nextState;
 };
-
 
 export const createContactHelper = (nextState, action) => {
   let contacts = nextState.firmList[action.contact.company_id].contacts;
