@@ -6,7 +6,6 @@ class ContactForm extends React.Component {
 
   constructor(props){
     super(props);
-    // this.state = DEFAULT_STATE;
     this.changeName = this.changeName.bind(this);
     this.changeNotes = this.changeNotes.bind(this);
     this.changeEmail = this.changeEmail.bind(this);
